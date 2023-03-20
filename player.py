@@ -2,7 +2,7 @@ import pafy
 import vlc
 
 
-def play_song(url):
+def find_play_song_url(url):
     is_opening = False
     is_playing = False
 

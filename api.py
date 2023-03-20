@@ -1,11 +1,12 @@
 from googleapiclient.discovery import build
 from config import YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_KEY, YOUTUBE_API_VERSION, MAX_RESULTS
+import asyncio
 
 youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                 developerKey=YOUTUBE_API_KEY)
 
 
-def search(query):
+async def search(query):
     request = youtube.search().list(
         part='id,snippet',
         q=query,
